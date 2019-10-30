@@ -16,7 +16,7 @@ module.exports = appInfo => {
     client: {
       host: 'localhost',
       user: 'root',
-      password: 'Asd4130801',
+      password: '4130801asd',
       port: '3306',
       database: 'cherish',
     },
