@@ -6,7 +6,7 @@ class HomeController extends Controller {
   async list() {
     const { ctx, service } = this;
     const { page, size } = ctx.params;
-    const form = { page, size, name: ctx.request.body.name };
+    const form = { page, size, ...ctx.request.body };
     const data = await service.article.list(form);
     if (!Object.keys(data).length) return (ctx.body = { code: 1, data, message: '暂无数据' });
     ctx.body = { code: 0, data, message: '获取成功' };
