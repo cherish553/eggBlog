@@ -17,7 +17,9 @@ class HomeService extends Service {
   }
   // 查询文章分类列表
   async list({ name, page, size }) {
-    return ({ total: (await this.app.mysql.query('SELECT COUNT(*) FROM category'))[0]['COUNT(*)'], data: await this.app.mysql.query(`SELECT * FROM category  WHERE name LIKE '%${name}%' LIMIT ${parseInt(size)} OFFSET ${--page * size}`) });
+    const data = await this.app.mysql.query(`SELECT * FROM category  WHERE name LIKE '%${name}%' LIMIT ${parseInt(size)} OFFSET ${--page * size}`);
+    const total = (await this.app.mysql.query(`SELECT COUNT(*) FROM category  WHERE name LIKE '%${name}%'`))[0]['COUNT(*)'];
+    return ({ total, data });
   }
   // 编辑文章类别
   async update({ name, id }) {

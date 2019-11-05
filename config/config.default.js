@@ -1,7 +1,8 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
-
+// or
+// import * as qiniu from 'qiniu-js'
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -33,12 +34,24 @@ module.exports = appInfo => {
   // // 注册jwt
   config.jwt = {
     enable: true,
-    ignore: [ '/user/login' ],
+    ignore: [ '/user/login',
+      '/article/list/:page/:size',
+      '/category/list/:page/:size',
+      '/tag/list/:page/:size',
+      '/article/star/:id',
+      '/article/filter/:type',
+      '/article/searchForName',
+      '/article/searchForCategoryId',
+      '/article/searchFortagId',
+      '/article/search/:id' ],
     cert: 'cherish',
   };
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1567864018404_1531';
-
+  config.qiniu = {
+    AK: 'yuVMk91p045VZ7d1jB_awJ5FFC63vJ1g-zjnZ4xY',
+    SK: 'JyCnbJgKkHHzzzYGicyLDKe3HznbDBgxQSse2vjG',
+  };
 
   // add your user config here
   const userConfig = {

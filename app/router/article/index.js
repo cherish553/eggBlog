@@ -12,5 +12,15 @@ module.exports = app => {
   router.put(`${article}update`, controller.article.update);
   // 删除文章
   router.delete(`${article}del/:id`, controller.article.del);
+  // 点赞文章
+  router.get(`${article}star/:id`, controller.article.star);
+  // 根据文章类型获取文章 0 是置顶文章 1是最新文章 2是热门文章
+  router.get(`${article}filter/:type`, controller.article.filter);
+  // 根据文章标题查询文章
+  router.post(`${article}searchForName`, controller.article.searchForName);
+  // 根据类别id查询文章
+  router.post(`${article}searchForCategoryId`, controller.article.searchForCategoryId);
+  // 根据标签id查询文章
+  router.post(`${article}searchFortagId`, controller.article.searchFortagId);
 };
 

@@ -6,7 +6,7 @@ class HomeController extends Controller {
     const { ctx, service } = this;
     const data = await service.tag.all();
     if (!Object.keys(data).length) return (ctx.body = { code: 1, data, message: '暂无数据' });
-    ctx.body = { code: 0, data, message: '获取成功' };
+    ctx.body = { code: 0, data, message: '' };
   }
   // 获取标签类别
   async list() {
@@ -15,7 +15,7 @@ class HomeController extends Controller {
     const form = { page, size, name: ctx.request.body.name };
     const data = await service.tag.list(form);
     if (!Object.keys(data).length) return (ctx.body = { code: 1, data, message: '暂无数据' });
-    ctx.body = { code: 0, data, message: '获取成功' };
+    ctx.body = { code: 0, data, message: '' };
   }
   // 添加标签类别
   async add() {
