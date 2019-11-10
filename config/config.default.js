@@ -39,11 +39,14 @@ module.exports = appInfo => {
       '/category/list/:page/:size',
       '/tag/list/:page/:size',
       '/article/star/:id',
+      '/article/visits/:id',
       '/article/filter/:type',
       '/article/searchForName',
       '/article/searchForCategoryId',
       '/article/searchFortagId',
-      '/article/search/:id' ],
+      '/article/search/:id',
+      '/user/getVisitsCount',
+      '/user/getAddVistis' ],
     cert: 'cherish',
   };
   // use for cookie sign key, should change to your own and keep security

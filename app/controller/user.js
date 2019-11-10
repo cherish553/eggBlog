@@ -24,6 +24,14 @@ class HomeController extends Controller {
     const { name } = ctx.params;
     ctx.body = { code: 0, data: await ctx.helper.del.delFile(name), message: '' };
   }
+  async getVisitsCount() {
+    const { ctx, service } = this;
+    ctx.body = { code: 0, data: (await service.user.getVisitsCount())[0], message: '' };
+  }
+  async getAddVistis() {
+    const { ctx, service } = this;
+    ctx.body = { code: 0, data: (await service.user.getAddVistis()), message: '' };
+  }
   // console.log(ctx.request.body);
   // ctx.body = ({ message: 'ok' });
   // ctx.body = { code: 0, message: 'success', data: await service.user.login() };

@@ -14,6 +14,8 @@ module.exports = app => {
   router.delete(`${article}del/:id`, controller.article.del);
   // 点赞文章
   router.get(`${article}star/:id`, controller.article.star);
+  // 增加文章访问量
+  router.get(`${article}visits/:id`, controller.article.visits);
   // 根据文章类型获取文章 0 是置顶文章 1是最新文章 2是热门文章
   router.get(`${article}filter/:type`, controller.article.filter);
   // 根据文章标题查询文章

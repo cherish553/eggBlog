@@ -44,6 +44,13 @@ class HomeController extends Controller {
     await service.article.star(id);
     ctx.body = { code: 0, data: true, message: '' };
   }
+  // 增加文章访问量
+  async visits() {
+    const { ctx, service } = this;
+    const { id } = ctx.params;
+    await service.article.visits(id);
+    ctx.body = { code: 0, data: true, message: '' };
+  }
   // 根据文章类型获取文章
   async filter() {
     const { ctx, service } = this;
