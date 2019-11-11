@@ -12,11 +12,11 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {
-    cluster: {
-      listen: {
-        port: 3000,
-      },
-    },
+    // cluster: {
+    //   listen: {
+    //     port: 3000,
+    //   },
+    // },
   };
   // mysql
   config.mysql = {
