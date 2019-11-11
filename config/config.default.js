@@ -61,7 +61,13 @@ module.exports = appInfo => {
     AK: 'yuVMk91p045VZ7d1jB_awJ5FFC63vJ1g-zjnZ4xY',
     SK: 'JyCnbJgKkHHzzzYGicyLDKe3HznbDBgxQSse2vjG',
   };
-
+  config.cluster = {
+    listen: {
+      path: '',
+      port: 3000,
+      hostname: '0.0.0.0',
+    },
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
