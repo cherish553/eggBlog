@@ -1,5 +1,5 @@
 'use strict';
-const tag = '/tag/';
+const tag = '/blog/tag/';
 module.exports = app => {
   const { router, controller } = app;
   // 获取标签列表

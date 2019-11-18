@@ -1,5 +1,5 @@
 'use strict';
-const article = '/article/';
+const article = '/blog/article/';
 module.exports = app => {
   const { router, controller } = app;
   // 获取文章列表

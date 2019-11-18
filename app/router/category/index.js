@@ -1,5 +1,5 @@
 'use strict';
-const category = '/category/';
+const category = '/blog/category/';
 module.exports = app => {
   const { router, controller } = app;
   // 获取类别列表

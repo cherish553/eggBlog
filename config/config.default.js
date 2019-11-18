@@ -12,11 +12,6 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {
-    // cluster: {
-    //   listen: {
-    //     port: 3000,
-    //   },
-    // },
   };
   // mysql
   config.mysql = {
@@ -40,19 +35,19 @@ module.exports = appInfo => {
   // // 注册jwt
   config.jwt = {
     enable: true,
-    ignore: [ '/user/login',
-      '/article/list/:page/:size',
-      '/category/list/:page/:size',
-      '/tag/list/:page/:size',
-      '/article/star/:id',
-      '/article/visits/:id',
-      '/article/filter/:type',
-      '/article/searchForName',
-      '/article/searchForCategoryId',
-      '/article/searchFortagId',
-      '/article/search/:id',
-      '/user/getVisitsCount',
-      '/user/getAddVistis' ],
+    ignore: [ '/blog/user/login',
+      '/blog/article/list/:page/:size',
+      '/blog/category/list/:page/:size',
+      '/blog/tag/list/:page/:size',
+      '/blog/article/star/:id',
+      '/blog/article/visits/:id',
+      '/blog/article/filter/:type',
+      '/blog/article/searchForName',
+      '/blog/article/searchForCategoryId',
+      '/blog/article/searchFortagId',
+      '/blog/article/search/:id',
+      '/blog/user/getVisitsCount',
+      '/blog/user/getAddVistis' ],
     cert: 'cherish',
   };
   // use for cookie sign key, should change to your own and keep security
@@ -61,11 +56,12 @@ module.exports = appInfo => {
     AK: 'yuVMk91p045VZ7d1jB_awJ5FFC63vJ1g-zjnZ4xY',
     SK: 'JyCnbJgKkHHzzzYGicyLDKe3HznbDBgxQSse2vjG',
   };
-  config.cluster = {
+  process.env.NODE_ENV === 'development' ? '' : config.cluster = {
     listen: {
       port: 3000,
     },
   };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
